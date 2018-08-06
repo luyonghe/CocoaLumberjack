@@ -15,7 +15,7 @@ CocoaLumberjack 是一个适用于Mac和iOS的快速、简单，而且功能强�
 由四个部分组成：DDLog, DDLogger, DDLogMessage, DDLogFormatter。
 
 ### 2.1 DDLog与DDLogger
-![](media/15295496730457/15335271789746.png)
+![](https://github.com/3rdPartyLibraryAnalysis/CocoaLumberjack/blob/master/15335271789746.png)
 如上图所示，DDLog是整个库的入口，我们平时用的DDLogLevel等宏就是直接调用DDLog的接口。一个DDLog包含着一个或多个DDLogger，比如常用的DDTTYLogger，DDASLLogger等等。当我们调用DDLogInfo的时候，DDLog会把已有的DDLogger全部遍历一遍，对于每个DDLogger都会调用其logMessage接口。当然细心的读者会意识到，这些操作不可能同步(SYNC)进行。而且如果要保证日志的相对顺序，必然会给DDLogger分配一个专属的线性队列(SERIAL_QUEUE)。
 
 ### 2.2 DDLogger，DDLogFormatter与DDLogMessage
@@ -87,7 +87,7 @@ CocoaLumberjack自带了几种Log方式：
 
 所以你的.pch里面可能有段这样的代码：
 
-![](media/15295496730457/15335275099106.png)
+![](https://github.com/3rdPartyLibraryAnalysis/CocoaLumberjack/blob/master/15335275099106.png)
 
 然后加入代码：
 
@@ -120,10 +120,10 @@ CocoaLumberjack自带了几种Log方式：
 DDLog和NSLog的语法是一样的。
 
 运行程序，可以在Xocde控制台看到：
-![](media/15295496730457/15335275615889.png)
+![](https://github.com/3rdPartyLibraryAnalysis/CocoaLumberjack/blob/master/15335275615889.png)
 
 产生的Log文件打开是这样的：
-![](media/15295496730457/15335275741484.png)
+![](https://github.com/3rdPartyLibraryAnalysis/CocoaLumberjack/blob/master/15335275741484.png)
 Log级别
 接下来，你就要考虑用哪种级别了，CocoaLumberjack有5种：
 ```objectivec
