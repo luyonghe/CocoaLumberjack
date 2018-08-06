@@ -27,10 +27,11 @@ CocoaLumberjack 是一个适用于 Mac 和 iOS 的快速、简单，而且功能
 先阐述一下整个流程。DDLog 调用 DDLogger 的时候，传入的是一个 DDLogMessage 实例。这个实例除了日志内容本身之外，还包含了关于这个日志的辅助信息，主要包括日志等级(level)，环境（context），队列（queueLabel），标签（tag），时间戳（timestamp）等等，他们的用法下面会有详细介绍。接着，DDLogger 里面如果有 DDLogFormatter 的话，会先调用 DDLogFormatter 处理日志格式，对日志进行过滤等等操作，然后把日志打到 Logger 对应的位置。
 
 这里要注意，每个 DDLogger 最多只能有一个 DDLogFormatter 实例，可以通过 setLogFormatter：设置。但是，如果有需要同时应用多个 DDLogFormatter 的话，可以使用框架内置的一个 DDMultiFormatter 把需要用的整合到一起。这样就使得用户自定义 formatter 非常的方便。这里要注意两点：
-
 （1）DDMultiFormatter 应用 formatter 时，是按照其添加的顺序逐个依次线性地进行的，所以往 DDMultiFormatter 上添加 formatter 时一定要注意添加的顺序；
+
 （2）虽然 DDLogFormatter 名字上叫做 Formatter，它的功能并不局限于改变日志的格式。你还可以用它来过滤日志等等。
-2.3 DDLogMessage 相关属性
+
+### 2.3 DDLogMessage 相关属性
 DDLogMessage 属性的作用是给 DDLogFormatter 足够的信息去修改日志格式以及进行过滤筛选等操作。这里贴一下 DDLogMessage 的属性列表：
 ```objectivec
 @interface DDLogMessage : NSObject <NSCopying>
@@ -79,8 +80,11 @@ end
 **CocoaLumberjack 自带了几种 Log 方式：**
 
 > 1.DDLog（整个框架的基础）
+>
 > 2.DDASLLogger（发送日志语句到苹果的日志系统，以便它们显示在Console.app上）
+>
 > 3.DDTTYLoyger（发送日志语句到Xcode控制台）
+>
 > 4.DDFIleLoger（把日志写入本地文件
 
 你可以同时记录文件和控制台，还可以创建自己的 logger，将日志语句发送到网络或者数据库中。
