@@ -76,7 +76,7 @@ end
 
 ## 四、使用
 
-CocoaLumberjack 自带了几种 Log 方式：
+**CocoaLumberjack 自带了几种 Log 方式：**
 
 > 1.DDLog（整个框架的基础）
 > 2.DDASLLogger（发送日志语句到苹果的日志系统，以便它们显示在Console.app上）
@@ -122,11 +122,15 @@ CocoaLumberjack 自带了几种 Log 方式：
 DDLog 和 NSLog 的语法是一样的。
 
 运行程序，可以在 Xocde 控制台看到：
-![](https://github.com/3rdPartyLibraryAnalysis/CocoaLumberjack/blob/master/15335275615889.png)
+
+![Xcode 日志](https://github.com/3rdPartyLibraryAnalysis/CocoaLumberjack/blob/master/15335275615889.png)
 
 产生的 Log 文件打开是这样的：
-![](https://github.com/3rdPartyLibraryAnalysis/CocoaLumberjack/blob/master/15335275741484.png)
-Log 级别
+
+![Log 文件](https://github.com/3rdPartyLibraryAnalysis/CocoaLumberjack/blob/master/15335275741484.png)
+
+**Log 级别**
+
 接下来，你就要考虑用哪种级别了，CocoaLumberjack有5种：
 ```objectivec
 typedef NS_OPTIONS(NSUInteger, DDLogFlag){
