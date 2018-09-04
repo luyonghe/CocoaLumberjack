@@ -61,7 +61,7 @@ DDLogMessage 属性的作用是给 DDLogFormatter 足够的信息去修改日志
 
 ## 三、安装
 
-第一种方法：使用 `cocoapods`，`Podfile` 看起来是这样的：
+第一种方法：使用 `CocoaPods`，`Podfile` 看起来是这样的：
 
 ```objectivec
 platform:ios, '7.0'
