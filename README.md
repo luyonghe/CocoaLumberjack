@@ -167,3 +167,4 @@ static const DDLogLevel ddLogLevel = DDLogLevelWarning;
 我们还可以[自定义日志的 formatter 格式](https://github.com/CocoaLumberjack/CocoaLumberjack/blob/master/Documentation/CustomFormatters.md)：
 首先自定义一个 LogFormatter, 遵从 DDLogFormatter 协议，我们需要重写 - (NSString *)formatLogMessage:(DDLogMessage *)logMessage 这个方法，这个方法的输入参数是由 logger 发的一个 DDLogMessage 对象，包含了一些必要的信息，返回值就是最终 log 的消息体字符串。
 
+
